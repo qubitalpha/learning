@@ -2,7 +2,7 @@
 
 ## Track 1: LLM Inference & Serving Systems
 
-> **Associated Project**: [`mini-vllm`](../mini-vllm/README.md)  
+> **Associated Project**: [mini-vllm](../mini-vllm/README.md)  
 > **Target Hardware**: 16GB Apple Silicon MacBook Pro  
 > **Philosophy**: First-principles physical grounding, bottleneck-driven progression, bare-metal implementation before abstractions.  
 > **Milestone Completion Rule**: Before any milestone is marked `- [x]`, the implementation must be tested and you must pass a short concept & edge-case grilling session.
