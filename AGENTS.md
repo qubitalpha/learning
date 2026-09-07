@@ -16,3 +16,4 @@
 - Update `README.md` when an item is done by changing `[ ]` to `[x]` and hyperlinking the item to the notes or project.
 - Automatically commit and push updates to `origin/main`.
 - When asked "What should I learn next?", check `README.md`, find the first uncompleted `- [ ]` item, and present only that next concrete task.
+
