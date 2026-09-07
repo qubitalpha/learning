@@ -1,15 +1,15 @@
 - Video: [Intro to Large Language Models - Andrej Karpathy](https://www.youtube.com/watch?v=zjkBMFhNj_g&t=2429s)
-- An LLM (e.g. Llama) physically boils down to just two files: a parameters file (weights blob) and a model architecture file (`run.c` or `model.py`).
-- The parameters file holds all the learned weights ($W$) and biases ($b$) from training (same fundamentals learned in micrograd).
-- The model code defines the forward pass: layers, neurons, attention, activations, and softmax to calculate token probabilities.
-- Parameters and model architecture are tightly coupled—the code expects the exact tensor shapes and layout of the weights file.
-- During inference, we only run the forward pass and don't need to store intermediate activation values (`(input * weight) + bias`) because there is no backpropagation or gradient calculation.
-- This activation memory is freed up immediately after each layer computes, unlike training where activations must sit in VRAM for the backward pass.
-- Training happens in 3 distinct stages: Pre-training, Fine-tuning (SFT), and RLHF.
-- Pre-training is next-token prediction at massive scale on internet data (scaling up what was done in makemore) to produce a base document completer.
-- Fine-tuning continues training on curated, high-quality Q&A and instruction datasets to turn the base model into an assistant.
-- RLHF (Reinforcement Learning from Human Feedback) uses human preferences and reward scoring to align tone, usefulness, and safety guardrails.
-- Scaling laws hold true: model performance scales predictably with model size (parameter count) and data volume (tokens seen).
-- Security threats to watch out for: jailbreaking, prompt injection (via text, images, Google Docs), universal transferable suffixes, and data poisoning.
-- LLM as an OS analogy: LLM is the CPU, context window is RAM, RAG/embeddings is disk storage, and tools/APIs are peripheral I/O devices.
-- Personal takeaway: Currently operating at the application layer; the goal is to move lower down the stack into systems, runtime, and serving infrastructure.
+- LLM (e.g. Llama) is 2 files: parameters file (`parameters.bin`) and model architecture file (`run.c` or `model.py`).
+- Parameters have both weights and bias (same as micrograd).
+- Model architecture has neurons, layers, activations, and softmax to do the forward pass.
+- Parameters and model architecture are tightly coupled.
+- During inference, we don't store intermediate values `((input * weight) + bias)` because there's no backprop or gradient calculation.
+- This memory is freed up immediately after each layer computes.
+- Training has 3 stages: pre-training, fine-tuning, and RLHF.
+- Pre-training is next-token prediction at scale on internet data to create a base model (makemore at scale).
+- Fine-tuning continues training with high-quality annotated Q&A data to make it an assistant.
+- RLHF uses human feedback to align behavior and safety.
+- Scaling depends on model size (number of parameters) and data volume.
+- Security threats: jailbreaking, prompt injection (via images, Google Docs), universal transferable suffix, data poisoning.
+- LLM as OS analogy: CPU = LLM, RAM = context window, Disk = RAG/embeddings, Peripherals/IO = tools/APIs.
+- Personal takeaway: Currently on application layer, need to move lower into systems and inference runtime.
