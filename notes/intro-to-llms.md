@@ -13,3 +13,4 @@
 - Security threats: jailbreaking, prompt injection (via images, Google Docs), universal transferable suffix, data poisoning.
 - LLM as OS analogy: CPU = LLM, RAM = context window, Disk = RAG/embeddings, Peripherals/IO = tools/APIs.
 - Personal takeaway: Currently on application layer, need to move lower into systems and inference runtime.
+
