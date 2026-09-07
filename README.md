@@ -11,7 +11,9 @@
 
 ### Chapter 0: Physical Grounding and Raw Model Artifacts
 
-Pre-text video: Andrej Karpathy - "Intro to Large Language Models" (1 hour) and "Let's build the GPT Tokenizer" (2 hours).
+Pre-text videos:
+- [x] Andrej Karpathy - ["Intro to Large Language Models" (1 hour)](notes/intro-to-llms.md)
+- [ ] Andrej Karpathy - "Let's build the GPT Tokenizer" (2 hours)
 * What to extract:
   * The physical definition of a model: two files on disk (parameters weight blob and run.c/python code).
   * How Byte-Pair Encoding (BPE) merges character pairs into token IDs.
